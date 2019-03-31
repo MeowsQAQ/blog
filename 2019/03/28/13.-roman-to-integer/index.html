@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="一个分享日常学（mo）习（yu）的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Harry Porry">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="13. Roman to Integer">
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="一个分享日常学（mo）习（yu）的博客">
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Meows">
+  <!--Type page-->
+  
+      <meta property="og:type" content="article">
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>13. Roman to Integer - Meows</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://sowcar.com/t6/691/1553772492x1699166098.png" alt="Meows" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            13. Roman to Integer
+            
+          </h1>
+          <p class="posted-on">
+          2019-03-28
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/leetcode/" rel="tag">
+                  leetcode
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <h1>13. Roman to Integer</h1>
+<p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Symbol       Value</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure></p>
+<p>For example, two is written as <code>II</code> in Roman numeral, just two one's added together. Twelve is written as, <code>XII</code>, which is simply <code>X</code> + <code>II</code>. The number twenty seven is written as <code>XXVII</code>, which is <code>XX</code> + <code>V</code> + <code>II</code>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
+<ul>
+<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9.</li>
+<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90.</li>
+<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>
+</ul>
+<p>Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.</p>
+<p><strong>Example 1:</strong></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;III&quot;</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;IV&quot;</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;IX&quot;</span><br><span class="line">Output: 9</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 4:</strong></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;LVIII&quot;</span><br><span class="line">Output: 58</span><br><span class="line">Explanation: L = 50, V= 5, III = 3.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 5:</strong></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;MCMXCIV&quot;</span><br><span class="line">Output: 1994</span><br><span class="line">Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.</span><br></pre></td></tr></table></figure></p>
+<h3>Code:</h3>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">romanToInt</span><span class="params">(self,s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Accoriding to the [wiki] (https://en.wikipedia.org/wiki/Roman_numerals),</span></span><br><span class="line"><span class="string">        there are only three special cases, which are I, X and C. Thus we only need</span></span><br><span class="line"><span class="string">        to handle these cases when needed.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s) - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">'I'</span>:</span><br><span class="line">                result += <span class="number">1</span> <span class="keyword">if</span> result &lt; <span class="number">5</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] == <span class="string">'V'</span>:</span><br><span class="line">        	    result += <span class="number">5</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] == <span class="string">'X'</span>:</span><br><span class="line">        	    result += <span class="number">10</span> <span class="keyword">if</span> result &lt; <span class="number">50</span> <span class="keyword">else</span> <span class="number">-10</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] == <span class="string">'L'</span>:</span><br><span class="line">        	    result += <span class="number">50</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] == <span class="string">'C'</span>:</span><br><span class="line">        	    result += <span class="number">100</span> <span class="keyword">if</span> result &lt; <span class="number">500</span> <span class="keyword">else</span> <span class="number">-100</span></span><br><span class="line">            <span class="keyword">elif</span> s[i] == <span class="string">'D'</span>:</span><br><span class="line">        	    result += <span class="number">500</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">        	    result += <span class="number">1000</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># result = 10 9 109 99 1099 999 1999 2999 3999</span><br><span class="line"># i      = 8  7  6    5   4    3   2    1   0</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/2019/03/28/14.-longest-common-prefix/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2019/03/28/12.-integer-to-roman/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">About</h1>
+        <div class="custom-widget-content">
+          
+          一个分享日常学（mo）习（yu）的博客
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contactz</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/MeowsQAQ" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="https://weibo.com/p/1005055522653120" class="icon icon-weibo" target="_blank">weibo</a>
+            
+              <a href="https://twitter.com/AsuMeetHORSE" class="icon icon-twitter" target="_blank">twitter</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Others</h1>
+        <div class="widget-text">
+          <a href="https://meowsqaq.github.io/leetcode_climb/"><b size="3" style="line-height:1.5;">Leetcode</b></a>
+          <br><br>
+          <a href="https://github.com/MeowsQAQ/Rubynotebook"><b size="3" style="line-height:1.5;">Ruby教程</b></a>
+          <br><br>
+          <a href="https://github.com/MeowsQAQ/flasksnotebook"><b size="3" style="line-height:1.5;">Flask教程</b></a>
+          <br><br>
+        </div>
+      </aside>
+    </div>
+    <!-- <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">站内搜索</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          
+        </div>
+      
+    </div> -->
+  
+
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Meows &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
