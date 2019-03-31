@@ -40,10 +40,10 @@
   <title>20. Valid Parentheses - Meows</title>
 
 
-  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="shortcut icon" href="/myBlog/images/favicon.ico">
 
   <!-- Custom CSS/Sass -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/myBlog/css/style.css">
 
   <!----------------------------
 
@@ -68,7 +68,7 @@
   <header class="site-header">
   <div class="header-inside">
     <div class="logo">
-      <a href="/" rel="home">
+      <a href="/myBlog/" rel="home">
         
         <img src="http://sowcar.com/t6/691/1553772492x1699166098.png" alt="Meows" height="60">
         
@@ -82,7 +82,7 @@
           
           
             <li>
-              <a href="/.">
+              <a href="/myBlog/.">
                 
                   Home
                 
@@ -90,7 +90,7 @@
             </li>
           
             <li>
-              <a href="/tags">
+              <a href="/myBlog/tags">
                 
                   Tags
                 
@@ -98,7 +98,7 @@
             </li>
           
             <li>
-              <a href="/about">
+              <a href="/myBlog/about">
                 
                   About
                 
@@ -134,7 +134,7 @@
           <div class="tags-links">
             
               
-                <a href="/tags/leetcode/" rel="tag">
+                <a href="/myBlog/tags/leetcode/" rel="tag">
                   leetcode
                 </a>
               
@@ -143,8 +143,7 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <h1>20. Valid Parentheses</h1>
-<p>Given a string containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
+          <h1 id="20-Valid-Parentheses"><a href="#20-Valid-Parentheses" class="headerlink" title="20. Valid Parentheses"></a>20. Valid Parentheses</h1><p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
 <p>An input string is valid if:</p>
 <ol>
 <li>Open brackets must be closed by the same type of brackets.</li>
@@ -152,17 +151,16 @@
 </ol>
 <p>Note that an empty string is also considered valid.</p>
 <p><strong>Example 1:</strong></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
 <p><strong>Example 2:</strong></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()[]&#123;&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()[]&#123;&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
 <p><strong>Example 3:</strong></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;(]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;(]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
 <p><strong>Example 4:</strong></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;([)]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;([)]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
 <p><strong>Example 5:</strong></p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;&#123;[]&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
-<h3>Code:</h3>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># @param s, a string</span></span><br><span class="line">    <span class="comment"># @return a boolean</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValid</span><span class="params">(self, s)</span>-&gt;bool:</span></span><br><span class="line">        valids = [<span class="string">'()'</span>, <span class="string">'[]'</span>, <span class="string">'&#123;&#125;'</span>]</span><br><span class="line">        <span class="keyword">if</span> len(s) % <span class="number">2</span> != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">while</span> len(s) != <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">            o_len = len(s)</span><br><span class="line">            <span class="keyword">for</span> val <span class="keyword">in</span> valids:</span><br><span class="line">                s = s.replace(val, <span class="string">''</span>)</span><br><span class="line">            <span class="keyword">if</span> len(s) == o_len:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;&#123;[]&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># @param s, a string</span></span><br><span class="line">    <span class="comment"># @return a boolean</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValid</span><span class="params">(self, s)</span>-&gt;bool:</span></span><br><span class="line">        valids = [<span class="string">'()'</span>, <span class="string">'[]'</span>, <span class="string">'&#123;&#125;'</span>]</span><br><span class="line">        <span class="keyword">if</span> len(s) % <span class="number">2</span> != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">while</span> len(s) != <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">            o_len = len(s)</span><br><span class="line">            <span class="keyword">for</span> val <span class="keyword">in</span> valids:</span><br><span class="line">                s = s.replace(val, <span class="string">''</span>)</span><br><span class="line">            <span class="keyword">if</span> len(s) == o_len:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
         </div>
       </article>
@@ -183,7 +181,7 @@
       
       
         <div class="nav-next">
-          <a href="/2019/03/29/19.-remove-nth-node-from-end-of-list/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/myBlog/2019/03/29/19.-remove-nth-node-from-end-of-list/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
@@ -263,7 +261,7 @@
 
   <!-- After footer scripts -->
   <!-- scripts -->
-<script src="/js/app.js"></script>
+<script src="/myBlog/js/app.js"></script>
 
 
 
