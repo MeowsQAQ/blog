@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Hello World">
+      <meta property="og:title" content="21. Merge Two Sorted Lists">
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>Hello World - Meows</title>
+  <title>21. Merge Two Sorted Lists - Meows</title>
 
 
   <link rel="shortcut icon" href="/blog/images/favicon.ico">
@@ -125,17 +125,17 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Hello World
+            21. Merge Two Sorted Lists
             
           </h1>
           <p class="posted-on">
-          2019-03-28
+          2019-03-31
           </p>
           <div class="tags-links">
             
               
-                <a href="/blog/tags/HelloHexo/" rel="tag">
-                  HelloHexo
+                <a href="/blog/tags/leetcode/" rel="tag">
+                  leetcode
                 </a>
               
             
@@ -143,15 +143,11 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <h1 id="21-Merge-Two-Sorted-Lists"><a href="#21-Merge-Two-Sorted-Lists" class="headerlink" title="21. Merge Two Sorted Lists"></a>21. Merge Two Sorted Lists</h1><p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+<h3 id="Code1"><a href="#Code1" class="headerlink" title="Code1:"></a>Code1:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> l1:<span class="keyword">return</span> l2</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> l2:<span class="keyword">return</span> l1</span><br><span class="line"></span><br><span class="line">        start = <span class="literal">None</span>    </span><br><span class="line">        <span class="keyword">if</span> l1.val &lt; l2.val:</span><br><span class="line">            start = l1;</span><br><span class="line">            start.next = self.mergeTwoLists(l1.next, l2)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            start = l2;</span><br><span class="line">            start.next = self.mergeTwoLists(l1, l2.next)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> start</span><br></pre></td></tr></table></figure>
+<h3 id="Code2"><a href="#Code2" class="headerlink" title="Code2:"></a>Code2:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> a <span class="keyword">and</span> b:</span><br><span class="line">            <span class="keyword">if</span> a.val &gt; b.val:</span><br><span class="line">                a, b = b, a</span><br><span class="line">            a.next = self.mergeTwoLists(a.next, b)</span><br><span class="line">        <span class="keyword">return</span> a <span class="keyword">or</span> b</span><br></pre></td></tr></table></figure>
 
         </div>
       </article>
@@ -170,10 +166,10 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/blog/2019/03/28/1.two-sum/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
-        </div>
       
+        <div class="nav-next">
+          <a href="/blog/2019/03/29/20.-valid-parentheses/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
       
     </div>
 
