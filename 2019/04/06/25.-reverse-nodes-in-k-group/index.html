@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="24. Swap Nodes in Pairs">
+      <meta property="og:title" content="25. Reverse Nodes in k-Group">
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>24. Swap Nodes in Pairs - Meows</title>
+  <title>25. Reverse Nodes in k-Group - Meows</title>
 
 
   <link rel="shortcut icon" href="/blog/images/favicon.ico">
@@ -125,11 +125,11 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            24. Swap Nodes in Pairs
+            25. Reverse Nodes in k-Group
             
           </h1>
           <p class="posted-on">
-          2019-04-03
+          2019-04-06
           </p>
           <div class="tags-links">
             
@@ -143,12 +143,18 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <h1 id="24-Swap-Nodes-in-Pairs"><a href="#24-Swap-Nodes-in-Pairs" class="headerlink" title="24. Swap Nodes in Pairs"></a>24. Swap Nodes in Pairs</h1><p>Given a linked list, swap every two adjacent nodes and return its head.</p>
-<p>You may <strong>not</strong> modify the values in the list’s nodes, only nodes itself may be changed.</p>
+          <h1 id="25-Reverse-Nodes-in-k-Group"><a href="#25-Reverse-Nodes-in-k-Group" class="headerlink" title="25. Reverse Nodes in k-Group"></a>25. Reverse Nodes in k-Group</h1><p>Given a linked list, reverse the nodes of a linked list _k_ at a time and return its modified list.</p>
+<p>_k_ is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of _k_ then left-out nodes in the end should remain as it is.</p>
 <p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</span><br></pre></td></tr></table></figure>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode(object):</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val = x</span><br><span class="line">#         self.next = None</span><br><span class="line"></span><br><span class="line">class Solution(object):</span><br><span class="line">    def swapPairs(self, head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        pre, pre.next = self, head</span><br><span class="line">        while pre.next and pre.next.next:</span><br><span class="line">            a = pre.next</span><br><span class="line">            b = a.next</span><br><span class="line">            pre.next, b.next, a.next = b, a, b.next</span><br><span class="line">            pre = a</span><br><span class="line">        return self.next</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pre-&gt;a-&gt;b-&gt;b.next   ==&gt;   pre -&gt;b-&gt;a-&gt;b.next</span><br></pre></td></tr></table></figure>
+<p>Given this linked list: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code></p>
+<p>For _k_ = 2, you should return: <code>2-&gt;1-&gt;4-&gt;3-&gt;5</code></p>
+<p>For _k_ = 3, you should return: <code>3-&gt;2-&gt;1-&gt;4-&gt;5</code></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Only constant extra memory is allowed.</li>
+<li>You may not alter the values in the list’s nodes, only nodes itself may be changed.</li>
+</ul>
+<h2 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode(object):</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val = x</span><br><span class="line">#         self.next = None</span><br><span class="line"></span><br><span class="line">class Solution(object):</span><br><span class="line">    def reverseKGroup(self, head, k):</span><br><span class="line"></span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        dummy = jump = ListNode(0)</span><br><span class="line">        dummy.next = l = r = head</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            count = 0</span><br><span class="line">            while r and count &lt; k:   # use r to locate the range</span><br><span class="line">                r = r.next</span><br><span class="line">                count += 1</span><br><span class="line">            if count == k:  # if size k satisfied, reverse the inner linked list</span><br><span class="line">                pre, cur = r, l</span><br><span class="line">                for _ in range(k):</span><br><span class="line">                    cur.next, cur, pre = pre, cur.next, cur  # standard reversing</span><br><span class="line">                jump.next, jump, l = pre, l, r  # connect two k-groups</span><br><span class="line">            else:</span><br><span class="line">                return dummy.next</span><br></pre></td></tr></table></figure>
 
         </div>
       </article>
@@ -167,13 +173,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/blog/2019/04/06/26.-remove-duplicates-from-sorted-array/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/blog/2019/04/02/23.-merge-k-sorted-lists/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/blog/2019/04/06/26.-remove-duplicates-from-sorted-array/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
