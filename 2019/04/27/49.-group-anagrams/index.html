@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="25. Reverse Nodes in k-Group">
+      <meta property="og:title" content="49. Group Anagrams">
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>25. Reverse Nodes in k-Group - Meows</title>
+  <title>49. Group Anagrams - Meows</title>
 
 
   <link rel="shortcut icon" href="/blog/images/favicon.ico">
@@ -125,11 +125,11 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            25. Reverse Nodes in k-Group
+            49. Group Anagrams
             
           </h1>
           <p class="posted-on">
-          2019-04-06
+          2019-04-27
           </p>
           <div class="tags-links">
             
@@ -143,20 +143,17 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <h1>25. Reverse Nodes in k-Group</h1>
-<p>Given a linked list, reverse the nodes of a linked list <em>k</em> at a time and return its modified list.</p>
-<p><em>k</em> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <em>k</em> then left-out nodes in the end should remain as it is.</p>
+          <h1>49. Group Anagrams</h1>
+<p>Given an array of strings, group anagrams together.</p>
 <p><strong>Example:</strong></p>
-<p>Given this linked list: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code></p>
-<p>For <em>k</em> = 2, you should return: <code>2-&gt;1-&gt;4-&gt;3-&gt;5</code></p>
-<p>For <em>k</em> = 3, you should return: <code>3-&gt;2-&gt;1-&gt;4-&gt;5</code></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],</span><br><span class="line">  [&quot;nat&quot;,&quot;tan&quot;],</span><br><span class="line">  [&quot;bat&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p><strong>Note:</strong></p>
 <ul>
-<li>Only constant extra memory is allowed.</li>
-<li>You may not alter the values in the list's nodes, only nodes itself may be changed.</li>
+<li>All inputs will be in lowercase.</li>
+<li>The order of your output does not matter.</li>
 </ul>
-<h2>Code：</h2>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseKGroup</span><span class="params">(self, head, k)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dummy = jump = ListNode(<span class="number">0</span>)</span><br><span class="line">        dummy.next = l = r = head</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            count = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> r <span class="keyword">and</span> count &lt; k:   <span class="comment"># use r to locate the range</span></span><br><span class="line">                r = r.next</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> count == k:  <span class="comment"># if size k satisfied, reverse the inner linked list</span></span><br><span class="line">                pre, cur = r, l</span><br><span class="line">                <span class="keyword">for</span> _ <span class="keyword">in</span> range(k):</span><br><span class="line">                    cur.next, cur, pre = pre, cur.next, cur  <span class="comment"># standard reversing</span></span><br><span class="line">                jump.next, jump, l = pre, l, r  <span class="comment"># connect two k-groups</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> dummy.next</span><br></pre></td></tr></table></figure></p>
+<h2>Code:</h2>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> w <span class="keyword">in</span> sorted(strs):</span><br><span class="line">            key = tuple(sorted(w))</span><br><span class="line">            d[key] = d.get(key, []) + [w]</span><br><span class="line">        <span class="keyword">return</span> d.values()</span><br></pre></td></tr></table></figure></p>
 
         </div>
       </article>
@@ -175,13 +172,9 @@
     <!-- Pre or Next -->
     <div class="nav-links">
       
-        <div class="nav-previous">
-          <a href="/blog/2019/04/07/27.-remove-element/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
-        </div>
-      
       
         <div class="nav-next">
-          <a href="/blog/2019/04/06/26.-remove-duplicates-from-sorted-array/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/blog/2019/04/27/48.-rotate-image/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
