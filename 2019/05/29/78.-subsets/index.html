@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Meows">
+      <meta property="og:title" content="78. Subsets">
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Meows">
   <!--Type page-->
   
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="article">
   
   <!--Page Cover-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>leetcode - Meows</title>
+  <title>78. Subsets - Meows</title>
 
 
   <link rel="shortcut icon" href="/blog/images/favicon.ico">
@@ -117,149 +117,63 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">#leetcode</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-        
-        
-          <h2 class="year">2019</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            78. Subsets
             
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/12.-integer-to-roman/" class="title">
-      12. Integer to Roman
-    </a>
-  </li>
+          </h1>
+          <p class="posted-on">
+          2019-05-29
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/blog/tags/leetcode/" rel="tag">
+                  leetcode
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <h1 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h1><p>Given a set of <strong>distinct</strong> integers, <em>nums</em>, return all possible subsets (the power set).</p>
+<p><strong>Note:</strong> The solution set must not contain duplicate subsets.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [1,2,3]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [1],</span><br><span class="line">  [2],</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [1,3],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  []</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        self.dfs(sorted(nums), <span class="number">0</span>, [], res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, nums, index, path, res)</span>:</span></span><br><span class="line">        res.append(path)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(index, len(nums)):</span><br><span class="line">            self.dfs(nums, i+<span class="number">1</span>, path+[nums[i]], res)</span><br></pre></td></tr></table></figure>
 
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/11.-container-with-most-water/" class="title">
-      11. Container With Most Water
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/10.-regular-expression-matching/" class="title">
-      10. Regular Expression Matching
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/9.-palindrome-number/" class="title">
-      9. Palindrome Number
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/8.string-to-integer-atoi/" class="title">
-      8.String to Integer
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/7.-reverse-integer/" class="title">
-      7. Reverse Integer
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/6.-zigzag-conversion/" class="title">
-      6. ZigZag Conversion
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/5.-longest-palindromic-substring/" class="title">
-      5. Longest Palindromic Substring
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/4.-median-of-two-sorted-arrays/" class="title">
-      4. Median of Two Sorted Arrays
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/3.-longest-substring-without-repeating-characters/" class="title">
-      3. Longest Substring Without Repeating Characters
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/2.add-two-numbers/" class="title">
-      2.Add Two Numbers
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/1.two-sum/" class="title">
-      1.2Sum
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
-  </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
   
-<div class="container">
-  <ul class="pager">
-    
-      <li class="previous">
-        <a href="/blog/tags/leetcode/page/3/">
-          下一页 <span class="meta-arraw meta-arraw-right"></span>
-        </a>
-      </li>
-    
-    
-  </ul>
-</div>
+</section>
 
 
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/blog/2019/05/28/77.-combinations/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
 </div>
 
 
