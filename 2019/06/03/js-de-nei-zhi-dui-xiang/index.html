@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="一个分享日常学（mo）习（yu）的博客">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Harry Porry">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="JS的内置对象">
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="一个分享日常学（mo）习（yu）的博客">
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Meows">
+  <!--Type page-->
+  
+      <meta property="og:type" content="article">
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>JS的内置对象 - Meows</title>
+
+
+  <link rel="shortcut icon" href="/blog/images/favicon.ico">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/blog/css/style.css">
+
+  <!----------------------------
+
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/blog/" rel="home">
+        
+        <img src="https://s2.ax1x.com/2019/04/18/ESs1hD.png" alt="Meows" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/blog/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/blog/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/blog/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            JS的内置对象
+            
+          </h1>
+          <p class="posted-on">
+          2019-06-03
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/blog/tags/JavaScript/" rel="tag">
+                  JavaScript
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <h1 id="JS的内置对象"><a href="#JS的内置对象" class="headerlink" title="JS的内置对象"></a>JS的内置对象</h1><h2 id="Array-Boolean-Date-Math-Number-String，Error-Function-Global-Object-RegExp"><a href="#Array-Boolean-Date-Math-Number-String，Error-Function-Global-Object-RegExp" class="headerlink" title="Array, Boolean, Date, Math, Number , String，Error, Function, Global , Object, RegExp"></a><strong>Array, Boolean, Date, Math, Number , String，Error, Function, Global , Object, RegExp</strong></h2><p>在JavaScript中除了null和undefined以外其它的数据类型都被定义成了对象，可以用创建对象的方法定义变量； String、Math、Array、Date、RegExp是JavaScript中常用的对象</p>
+<h3 id="数据对象-Number数据对象；-String字符串对象；-Boolean布尔值对象-组合对象-Array数组对象；-Math数学对象；-Date日期对象-高级对象-Object自定义对象；Error错误对象；Function函数对象；-RegExp正-则表达式对象；Global全局对象"><a href="#数据对象-Number数据对象；-String字符串对象；-Boolean布尔值对象-组合对象-Array数组对象；-Math数学对象；-Date日期对象-高级对象-Object自定义对象；Error错误对象；Function函数对象；-RegExp正-则表达式对象；Global全局对象" class="headerlink" title="数据对象:  **Number数据对象； String字符串对象； Boolean布尔值对象 组合对象:  Array数组对象； Math数学对象； Date日期对象 高级对象:  Object自定义对象；Error错误对象；Function函数对象； RegExp正    则表达式对象；Global全局对象"></a>数据对象:  <em>**</em>Number数据对象； String字符串对象； Boolean布尔值对象 组合对象:  Array数组对象； Math数学对象； Date日期对象 高级对象:  Object自定义对象；Error错误对象；Function函数对象； RegExp正    则表达式对象；Global全局对象</h3><p><strong>自动创建对象</strong>:调用字符串的对象属性或方法时自动创建对象，用完就丢弃。 如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1=<span class="string">"hello world"</span>;</span><br></pre></td></tr></table></figure>
+<p>手工创建对象:采用new创建字符串对象str1，全局有效。 如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1= <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"hello word"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="1-String-字符串对象："><a href="#1-String-字符串对象：" class="headerlink" title="1. String 字符串对象："></a>1. String 字符串对象：</h2><p>格式编排:anchor()锚、blink()闪烁、fixed()固定、bold()粗体、italics()斜体、strike()删除线<br>big()字变大、small()字变小、sub()下标、sup()上标；</p>
+<ul>
+<li><strong>fontcolor(color)</strong> 字体颜色</li>
+<li><strong>fontsize(size)</strong> 字体大小</li>
+<li><strong>link(url)</strong> 超链接 大小写转换</li>
+<li><strong>toLowerCase()</strong>返回小写字符串</li>
+<li><strong>toUpperCase()</strong>返回大写字符串 获取指定字符:</li>
+<li><strong>charAt(index)</strong>返回指定位置字符</li>
+<li><strong>charCodeAt(index)</strong>返回指定位置字符Unicode编码 用法：</li>
+<li><strong>str1.bold()</strong>;//字体变粗；相当于“&lt;b&gt;str1&lt;/b&gt;“ str1.anchor(); //把str1标识为锚 子字符串处理:                                                                                                                                                截取:</li>
+<li><strong>str1.substr(start,length);</strong> //返回从索引位置start开始长为length的子字符串</li>
+<li><strong>str1.substring(start,end);</strong> //返回start开始end结束的子字符串,不包括最后的一个</li>
+<li><strong>str1.slice(start,end);</strong> //同substring，但允许使用负数表示从后计算位置,不包括最后的一个 替换:</li>
+<li><strong>str1.replace(findstr,tostr);</strong> //返回替换finstr为tostr之后的字符串 分割:</li>
+<li><strong>str1.split(bystr);</strong> //返回由bystr分割成的字符串数组(通常bystr是连接符号，如逗号或横杆) 连接:</li>
+<li><strong>str1.concat(string2);</strong> //返回 str1 与 string2 连接后的字符串 查询字符串:</li>
+<li><strong>indexOf(findstr,index);</strong> //返回正向的索引位置、lastIndexOf(findstr)返回反向的索引位置</li>
+<li><strong>match(regexp);</strong> //返回匹配的字符串、search(regexp)返回找到字符串的首字符索</li>
+<li><strong>str1.indexOf(findstr,index);</strong>//查找字符串findstr;从index位置开始的索引，省略index则从0开始找;类似下一句</li>
+<li><strong>str1.lastIndexOf(findstr);</strong> //从后面找起;返回findstr在str1中出现的首字符位置下标，没有找到返回-1</li>
+<li><strong>str1.match(regexp);</strong> //regexp代表正则表达式或字符串;返回匹配字符串的数组，如果没有匹配则返回null</li>
+<li><strong>str1.search(regexp);</strong> //返回匹配字符串的首字符位置下标;作用同indexOf方法,但可写正则表达式</li>
+<li><strong>str1.length;</strong> //获取字符串长度；汉字、字母长度均为1；返回大于或等于0的整数</li>
+</ul>
+<h2 id="2-Array-数组对象："><a href="#2-Array-数组对象：" class="headerlink" title="2. Array 数组对象："></a>2. Array 数组对象：</h2><h4 id="1-创建数组："><a href="#1-创建数组：" class="headerlink" title="1) 创建数组："></a>1) 创建数组：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(); a[<span class="number">0</span>] = <span class="string">"元素1"</span>; a[<span class="number">1</span>] = <span class="string">"元素2"</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>()&#123;<span class="string">"元素1"</span>, <span class="string">"元素2"</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"元素1"</span>,<span class="string">"元素2"</span>); <span class="comment">//一维数组，效果同上</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(); a[<span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//二维数组</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="string">'元素1'</span>, <span class="string">'元素2'</span>]; <span class="comment">// 效果等同于: var a = new Array("元素1","元素2");</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-删除数组：-delete-数组名"><a href="#2-删除数组：-delete-数组名" class="headerlink" title="2) 删除数组： delete 数组名;"></a>2) 删除数组： delete 数组名;</h3><h3 id="3-数组操作："><a href="#3-数组操作：" class="headerlink" title="3) 数组操作："></a>3) 数组操作：</h3><ul>
+<li><strong>arr.length;</strong> //获取数组元素的个数；返回大于或等于0的整数 连接数组： (原数组不变)</li>
+<li><strong>arr.join(bystr);</strong> //把数组的各元素由bystr连接起来作为字符串；与字符串的split功能刚好相反</li>
+<li><strong>arr.toString();</strong> //返回由逗号(,)连接数组元素组成的字符串</li>
+<li><strong>document.write(v.toString());</strong></li>
+<li><strong>document.write(v);</strong> //这两句效果一样</li>
+<li><strong>arr2 = arr.concat(元素, …);</strong> //把元素添加到数组尾端后，返回另一数组；在参数里填入另一数组，返回合并数组 数组排序： (返回排序后的数组；改变原数组)</li>
+<li><strong>arr.reverse();</strong> //按原顺序倒着排序</li>
+<li><strong>arr.sort();</strong> //按字典顺序排序 获取子数组： (返回被删/被截取的元素数组)</li>
+<li><strong>arr.slice(start,end);</strong> //从start下标开始，截取到end；返回被截取的元素数组；不改变原数组 //start和end可用负数表倒数(-1代表最后一个元素)；end&lt;start时不截取；忽略end，截取start后的所有元素</li>
+<li><strong>arr.splice(start,n,value, …);</strong> //从start下标开始删除n个，再插入value(可理解为替换)；改变原数组//start为负数时表倒数；n&lt;1表不删除；可忽略value(不插入)；可忽略n，表删除后面所有；返回被删元素数组</li>
+</ul>
+<h3 id="4-栈：-数组的基础；-改变原数组"><a href="#4-栈：-数组的基础；-改变原数组" class="headerlink" title="4) 栈：(数组的基础； 改变原数组)"></a>4) 栈：(数组的基础； 改变原数组)</h3><ul>
+<li><strong>arr.pop();</strong> //删最后的一个元素；返回删除的元素</li>
+<li><strong>arr.push(元素, …);</strong> //添加元素到最后位置；返回数组长度; 等价于: arr[length] = newValue;</li>
+<li><strong>arr.unshift(元素, …);</strong> //添加元素到最前位置(多个参数，则按参数顺序同时插入)；返回数组长度</li>
+<li><strong>arr.shift();</strong> //删最前的一个元素；返回被删除的元素</li>
+</ul>
+<h3 id="5-toString-和-valueOf"><a href="#5-toString-和-valueOf" class="headerlink" title="5) toString 和 valueOf"></a>5) toString 和 valueOf</h3><p>把每一项都调用 toString 方法，然后用半角逗号(,)连接每一项。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]; alert(arr); <span class="comment">//output:1,2,3,4,5</span></span><br></pre></td></tr></table></figure>
+<p>toLocaleString 方法在这里不做详细说明了，他的效果与 toString 方法类似，只是每项调用 toLocateString 方法。</p>
+<h2 id="4-Math-数学对象："><a href="#4-Math-数学对象：" class="headerlink" title="4. Math 数学对象："></a>4. Math 数学对象：</h2><p><strong>数学常数</strong>(可直接用)<br><strong>Math.E (自然数)</strong></p>
+<ol>
+<li>Math.LN2 (ln2)</li>
+<li>Math.LN10 (ln10)</li>
+<li>Math.LOG2E (log 2e)</li>
+<li>Math.LOG10E (log e)</li>
+<li>Math.PI (圆周率)</li>
+<li>Math.SQRT1_2 (根号1/2)</li>
+<li>Math.SQRT2 (根号2)</li>
+</ol>
+<p><strong>三角函数</strong>：</p>
+<ol>
+<li>Math.sin(x) 计算正弦值； (x在0~2π之间，返回值-1~1)</li>
+<li>Math.cos(x) 计算余弦值； (x在0~2π之间，返回值-1~1)</li>
+<li>Math.tan(x) 计算正切值； (x在0~2π之间，返回正切值)</li>
+</ol>
+<p><strong>反三角函数</strong>：</p>
+<ol>
+<li>Math.asin(x) 计算反正弦值；(x在 -1与1之间，返回0~2π)</li>
+<li>Math.acos(x) 计算反余弦值；(x在 -1与1之间，返回0~2π)</li>
+<li>Math.atan(x) 计算反正切值；(x可以为任意值，返回 -π/2 ~π/2)</li>
+<li>Math.atan2(y,x) 计算从X轴到一个点的角度；(y,x分别为点的纵坐标和横坐标，返回-π ~π)</li>
+</ol>
+<p><strong>计算函数</strong>：</p>
+<ol>
+<li>Math.sqrt(x) 计算平方根</li>
+<li>Math.pow(x,y) 计算x^y</li>
+<li>Math.exp(x) 计算e的指数 e^x</li>
+<li>Math.log(x) 计算自然对数 (x为大于0的整数)</li>
+</ol>
+<p><strong>数值比较函数</strong>：</p>
+<ol>
+<li>Math.abs(x) 计算绝对值</li>
+<li>Math.max(x,y,…) 返回参数中最大的一个</li>
+<li>Math.min(x,y,…) 返回参数中最小的一个</li>
+<li>* Math.random() 返回0~1之间的一个随机数 //若要整数时，如0~99的随机数： <code>n=parseInt(Math.random()*100);</code></li>
+<li>Math.round(x) 返回舍入为最接近的整数(四舍五入，负数时五舍六入)</li>
+<li>* Math.floor(x) 返回下舍入整数 (结果不大于x；正数时直接舍去小数，负数时 -1.1==-2</li>
+<li>Math.ceil(x) 返回上舍入整数 (结果大于等于x)</li>
+</ol>
+<h2 id="5-Date-时间对象："><a href="#5-Date-时间对象：" class="headerlink" title="5. Date 时间对象："></a>5. Date 时间对象：</h2><h3 id="创建日期对象："><a href="#创建日期对象：" class="headerlink" title="创建日期对象："></a>创建日期对象：</h3><h4 id="a-不指定参数时："><a href="#a-不指定参数时：" class="headerlink" title="a.不指定参数时："></a>a.不指定参数时：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nowd1=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="built_in">document</span>.write(nowd1.toLocaleString( ));</span><br><span class="line"><span class="comment">//显示当前时间，如：2019年5月24日 星期五 19时23分21秒</span></span><br><span class="line"><span class="comment">//不用"toLocaleString()"则显示： Mon Nov 24 2008 19:23:21 GMT+0800 (CST)</span></span><br></pre></td></tr></table></figure>
+<h4 id="b-参数为日期字符串："><a href="#b-参数为日期字符串：" class="headerlink" title="b.参数为日期字符串："></a>b.参数为日期字符串：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nowd2=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2008/3/20 11:12"</span>);</span><br><span class="line">alert(nowd2.toLocaleString());</span><br><span class="line"><span class="comment">//显示： 2008年03月20日 星期六 11时12分00秒</span></span><br><span class="line"><span class="keyword">var</span> nowd2=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2008/3/20 11:12"</span>);</span><br><span class="line">alert(nowd2.toLocaleString());</span><br><span class="line"><span class="comment">//显示： 2008年03月20日 星期六 11时12分00秒</span></span><br></pre></td></tr></table></figure>
+<h4 id="c-参数为毫秒数："><a href="#c-参数为毫秒数：" class="headerlink" title="c.参数为毫秒数："></a>c.参数为毫秒数：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nowd3=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">5000</span>);</span><br><span class="line">alert(nowd3.toLocaleString( ));</span><br><span class="line"><span class="comment">//显示： 1970年01月01日 星期四 08时00分05秒 //显示本国的时间</span></span><br><span class="line">alert(nowd3.toUTCString());</span><br><span class="line"><span class="comment">//显示西方的时间： Thu, 01 Jan 1970 00:00:05 GMT</span></span><br></pre></td></tr></table></figure>
+<h4 id="d-参数为年月日小时分钟秒毫秒："><a href="#d-参数为年月日小时分钟秒毫秒：" class="headerlink" title="d.参数为年月日小时分钟秒毫秒："></a>d.参数为年月日小时分钟秒毫秒：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nowd4=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2008</span>,<span class="number">10</span>,<span class="number">24</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">0</span>,<span class="number">300</span>);</span><br><span class="line">alert(nowd4.toLocaleString( ));</span><br><span class="line"><span class="comment">//毫秒并不直接显示；月份参数从0~11，所以这里10对应11月份</span></span><br><span class="line"><span class="comment">//显示： 2008年11月24日 星期一 11时12分00秒</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取和设置日期、时间的方法："><a href="#获取和设置日期、时间的方法：" class="headerlink" title="获取和设置日期、时间的方法："></a>获取和设置日期、时间的方法：</h3><ul>
+<li><strong>getDate() setDate(day_of_month)</strong> 日期 (1~31)</li>
+<li><strong>getDay()</strong> 星期 (1~7; 没set方法)</li>
+<li><strong>getMonth() setMonth (month)</strong> 月份 (0~11; 别忘加1)</li>
+<li><strong>getFullYear() setFullYear (year)</strong> 完整年份(-271820~275760)</li>
+<li><strong>getYear() setYear(year)</strong> 年 (范围同上； 1900年计算为0)</li>
+<li>g<strong>etHours() setHours (hour)</strong> 小时 (0~23)</li>
+<li><strong>getMinutes() setMinutes (minute)</strong> 分钟 (0~59)</li>
+<li><strong>getSeconds() setSeconds (second)</strong> 秒 (0~59)</li>
+<li><strong>getMilliseconds() setMillliseconds (ms)</strong> 毫秒(0-999)</li>
+<li><strong>getTime() setTime (allms)</strong> 累计毫秒数(从1970/1/1 00:00:00开始) 注意：set方法对任意整数有效，影响上一级的数；如setDate(-1)设为上个月30号。 但对小数没效。</li>
+</ul>
+<h3 id="日期和时间的转换："><a href="#日期和时间的转换：" class="headerlink" title="日期和时间的转换："></a>日期和时间的转换：</h3><ul>
+<li><strong>getTimezoneOffset()</strong> 返回本地时间与GMT的时间差，以分钟为单位(中国为-480；差8小时)</li>
+<li><strong>toUTCString()</strong> 返回国际标准时间字符串(默认)</li>
+<li><strong>toLocalString()</strong> 返回本地格式时间字符串</li>
+<li><strong>Date.parse(x)</strong> 返回累计毫秒数(从1970/1/1 00:00:00到x的本地时间，忽略秒以下的数字)</li>
+<li><strong>Date.UTC(x)</strong> 返回累计毫秒数(从1970/1/1 00:00:00到x的UTC时间) 不明UTC是什么</li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/blog/2019/06/03/zi-ding-yi-dui-xiang/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/blog/2019/06/03/javascript-ji-chu/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">About</h1>
+        <div class="custom-widget-content">
+          
+          一个分享日常学（mo）习（yu）的博客
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contactz</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/MeowsQAQ" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="https://weibo.com/p/1005055522653120" class="icon icon-weibo" target="_blank">weibo</a>
+            
+              <a href="https://twitter.com/AsuMeetHORSE" class="icon icon-twitter" target="_blank">twitter</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Others</h1>
+        <div class="widget-text">
+          <a href="https://meowsqaq.github.io/leetcode_climb/"><b size="3" style="line-height:1.5;">Leetcode</b></a>
+          <br><br>
+          <a href="https://github.com/MeowsQAQ/Rubynotebook"><b size="3" style="line-height:1.5;">Ruby教程</b></a>
+          <br><br>
+          <a href="https://github.com/MeowsQAQ/flasksnotebook"><b size="3" style="line-height:1.5;">Flask教程</b></a>
+          <br><br>
+        </div>
+      </aside>
+    </div>
+    <!-- <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">站内搜索</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          
+        </div>
+      
+    </div> -->
+  
+
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Meows &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/blog/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
