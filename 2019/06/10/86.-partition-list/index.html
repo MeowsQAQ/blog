@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Meows">
+      <meta property="og:title" content="86. Partition List">
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Meows">
   <!--Type page-->
   
-      <meta property="og:type" content="website">
+      <meta property="og:type" content="article">
   
   <!--Page Cover-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>leetcode - Meows</title>
+  <title>86. Partition List - Meows</title>
 
 
   <link rel="shortcut icon" href="/blog/images/favicon.ico">
@@ -117,221 +117,63 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">#leetcode</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-        
-        
-          <h2 class="year">2019</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            86. Partition List
             
-  <li>
-    <span class="date">
-      2019-03-29
-    </span>
-    <a href="/blog/2019/03/29/20.-valid-parentheses/" class="title">
-      20. Valid Parentheses
-    </a>
-  </li>
+          </h1>
+          <p class="posted-on">
+          2019-06-10
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/blog/tags/leetcode/" rel="tag">
+                  leetcode
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <h1 id="86-Partition-List"><a href="#86-Partition-List" class="headerlink" title="86. Partition List"></a>86. Partition List</h1><p>Given a linked list and a value _x_, partition it such that all nodes less than _x_ come before nodes greater than or equal to _x_.</p>
+<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3</span><br><span class="line">Output: 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</span><br></pre></td></tr></table></figure>
+<h2 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode(object):</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val = x</span><br><span class="line">#         self.next = None</span><br><span class="line"></span><br><span class="line">class Solution(object):</span><br><span class="line">    def partition(self, head, x):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :type x: int</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        h1 = l1 = ListNode(0)</span><br><span class="line">        h2 = l2 = ListNode(0)</span><br><span class="line">        while head:</span><br><span class="line">            if head.val &lt; x:</span><br><span class="line">                l1.next = head</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            else:</span><br><span class="line">                l2.next = head</span><br><span class="line">                l2 = l2.next</span><br><span class="line">            head = head.next</span><br><span class="line">        l2.next = None</span><br><span class="line">        l1.next = h2.next</span><br><span class="line">        return h1.next</span><br></pre></td></tr></table></figure>
 
-  <li>
-    <span class="date">
-      2019-03-29
-    </span>
-    <a href="/blog/2019/03/29/19.-remove-nth-node-from-end-of-list/" class="title">
-      19. Remove Nth Node From End of List
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-29
-    </span>
-    <a href="/blog/2019/03/29/18.4sum/" class="title">
-      18.4Sum
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/17.-letter-combinations-of-a-phone-number/" class="title">
-      17. Letter Combinations of a Phone Number
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/16.-3sum-closest/" class="title">
-      16. 3Sum Closest
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/15.-3sum/" class="title">
-      15. 3Sum
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/14.-longest-common-prefix/" class="title">
-      14. Longest Common Prefix
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/13.-roman-to-integer/" class="title">
-      13. Roman to Integer
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/12.-integer-to-roman/" class="title">
-      12. Integer to Roman
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/11.-container-with-most-water/" class="title">
-      11. Container With Most Water
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/10.-regular-expression-matching/" class="title">
-      10. Regular Expression Matching
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/9.-palindrome-number/" class="title">
-      9. Palindrome Number
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/8.string-to-integer-atoi/" class="title">
-      8.String to Integer
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/7.-reverse-integer/" class="title">
-      7. Reverse Integer
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/6.-zigzag-conversion/" class="title">
-      6. ZigZag Conversion
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/5.-longest-palindromic-substring/" class="title">
-      5. Longest Palindromic Substring
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/4.-median-of-two-sorted-arrays/" class="title">
-      4. Median of Two Sorted Arrays
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/3.-longest-substring-without-repeating-characters/" class="title">
-      3. Longest Substring Without Repeating Characters
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/2.add-two-numbers/" class="title">
-      2.Add Two Numbers
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2019-03-28
-    </span>
-    <a href="/blog/2019/03/28/1.two-sum/" class="title">
-      1.2Sum
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
-  </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
   
-<div class="container">
-  <ul class="pager">
-    
-      <li class="previous">
-        <a href="/blog/tags/leetcode/page/3/">
-          下一页 <span class="meta-arraw meta-arraw-right"></span>
-        </a>
-      </li>
-    
-    
-  </ul>
-</div>
+</section>
 
 
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/blog/2019/06/09/85.-maximal-rectangle/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
 </div>
 
 
