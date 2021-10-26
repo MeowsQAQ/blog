@@ -143,44 +143,147 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="一、-JS的简介"><a href="#一、-JS的简介" class="headerlink" title="一、 JS的简介"></a>一、 JS的简介</h2><h4 id="JavaScript是一种网页编程技术，经常用于创建动态交互网页-JavaScript是一种基于对象和事件驱动的解释性脚本语言，类似C语言和Java的语法-事先不编译；逐行执行；无需进行严格的变量声明；内置大量现成对象，编写少量程序可以完成目标-不同的浏览器甚至同一浏览器的不同版本对JavaScript的支持程度都不一样"><a href="#JavaScript是一种网页编程技术，经常用于创建动态交互网页-JavaScript是一种基于对象和事件驱动的解释性脚本语言，类似C语言和Java的语法-事先不编译；逐行执行；无需进行严格的变量声明；内置大量现成对象，编写少量程序可以完成目标-不同的浏览器甚至同一浏览器的不同版本对JavaScript的支持程度都不一样" class="headerlink" title="JavaScript是一种网页编程技术，经常用于创建动态交互网页 JavaScript是一种基于对象和事件驱动的解释性脚本语言，类似C语言和Java的语法 事先不编译；逐行执行；无需进行严格的变量声明；内置大量现成对象，编写少量程序可以完成目标 不同的浏览器甚至同一浏览器的不同版本对JavaScript的支持程度都不一样"></a>JavaScript是一种网页编程技术，经常用于创建动态交互网页 JavaScript是一种基于对象和事件驱动的解释性脚本语言，类似C语言和Java的语法 事先不编译；逐行执行；无需进行严格的变量声明；内置大量现成对象，编写少量程序可以完成目标 不同的浏览器甚至同一浏览器的不同版本对JavaScript的支持程度都不一样</h4><h2 id="二、-JS的基本语法"><a href="#二、-JS的基本语法" class="headerlink" title="二、 JS的基本语法"></a>二、 JS的基本语法</h2><h3 id="有两种JavaScript写法："><a href="#有两种JavaScript写法：" class="headerlink" title="有两种JavaScript写法："></a>有两种JavaScript写法：</h3><p>a. 直接在 html 中嵌入，程序写法:<br><code>&lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot; charset=&quot;UTF-8&quot;&gt;  
-&lt;!--  
-...javaScript程序...  
-// --&gt;  
-&lt;/script&gt;</code><br>b. 调用独立JavaScript文件：在html中写 <code>&lt;script type=&quot;text/javascript&quot; src=&quot;test1.js&quot;&gt; &lt;/script&gt;</code><br>&lt;script&gt; 不能用空标志。 JS脚本文件中不需要脚本开始和结束声明，直接写 function</p>
-<h3 id="1-在HTML中大小写是不敏感的，但标准的JavaScript是区分大小写的"><a href="#1-在HTML中大小写是不敏感的，但标准的JavaScript是区分大小写的" class="headerlink" title="1. 在HTML中大小写是不敏感的，但标准的JavaScript是区分大小写的"></a>1. 在HTML中大小写是不敏感的，但标准的JavaScript是区分大小写的</h3><h3 id="2-分号表示语句结束。"><a href="#2-分号表示语句结束。" class="headerlink" title="2. 分号表示语句结束。"></a>2. 分号表示语句结束。</h3><p>  有换行，分号允许不加(建议加上，以免错误和歧义)<br>程序忽略缩进：提倡加上空格或TAB增强程序可读性</p>
-<h3 id="3-标识符："><a href="#3-标识符：" class="headerlink" title="3. 标识符："></a>3. 标识符：</h3><p>成份是 不以数字开头的字母、数字 和下划线(_)、美元符($)<br>ECMA v3标准保留的JavaScript的关键字：<br>break case catch continue default delete do else false finally<br>for function if in instanceof new null return switch this<br>throw true try typeof var void while with</p>
-<h3 id="4-变量的声明："><a href="#4-变量的声明：" class="headerlink" title="4. 变量的声明："></a>4. 变量的声明：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x,y;</span><br><span class="line">x=<span class="number">1</span>; y=<span class="string">"hello world!"</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="5-函数："><a href="#5-函数：" class="headerlink" title="5. 函数："></a>5. 函数：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名 (<span class="params">参数</span>)</span>&#123;</span><br><span class="line">    函数体;</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>参数没类型或顺序，且可变长；可以使用变量、常量或表达式作为函数调用的参数声明函数时，参数可不明写，调用时用 arguments[number] 接收。参数是值传递的。函数由关键字 function 定义； 函数名的定义规则与标识符一致，大小写是敏感的返回任意类型(不需写返回类型)； 返回值必须使用return//参数数量是可变的,若要限定参数数量,如下做法: (指定参数数量为0)<code>if ( arguments.length !== 0 ) throw Error.parameterCount();</code>caller: 调用此函数的函数。没有被调用则此变量为 null。arguments: 此函数的参数列表。<br><code>arguments.caller: 调用此函数的参数列表,没有被调用则为 undefined  
-arguments.callee: 此函数本身的一个引用。在匿名函数里会需要用到。</code></p>
-<h3 id="6-数据类型："><a href="#6-数据类型：" class="headerlink" title="6. 数据类型："></a>6. 数据类型：</h3><h4 id="基本类型-Number：数字、-String：字符串、-Boolean：布尔-特殊类型-Null：空、-Undefined：未定义-组合类型-Array：数组、-Object：对象"><a href="#基本类型-Number：数字、-String：字符串、-Boolean：布尔-特殊类型-Null：空、-Undefined：未定义-组合类型-Array：数组、-Object：对象" class="headerlink" title="基本类型: Number：数字、 String：字符串、 Boolean：布尔 特殊类型: Null：空、 Undefined：未定义 组合类型: Array：数组、 Object：对象"></a>基本类型: Number：数字、 String：字符串、 Boolean：布尔 特殊类型: Null：空、 Undefined：未定义 组合类型: Array：数组、 Object：对象</h4><h3 id="7-Number-数值类型："><a href="#7-Number-数值类型：" class="headerlink" title="7. Number 数值类型："></a>7. Number 数值类型：</h3><p>所有数字都采用64位浮点格式存储，相当于Java和C语言中的double格式能表示的最大值是 <strong>±1.7976931348623157 x 10^308</strong>；能表示的最小值是 <strong>±5 x 10^ -324。</strong>10进制的整数的精确表达的范围是 <strong>-9007199254740992 (-2^53) 到 9007199254740992 (2^53</strong>)。16进制数据前面加上0x，八进制前面加0，<br>保留多少位小数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">111.115555</span>; <span class="keyword">var</span> b = a.toFixed(<span class="number">2</span>);</span><br><span class="line">alert(b + <span class="string">' : '</span> + <span class="keyword">typeof</span> b); <span class="comment">// 111.12 : string</span></span><br></pre></td></tr></table></figure>
-<h3 id="8-String-类型："><a href="#8-String-类型：" class="headerlink" title="8. String 类型："></a>8. String 类型：</h3><p>字符串常量首尾由单引号或双引号括起，没有字符，只有字符串(所有字符都按字符串处理)<br>常用转义符<strong>： \n换行 \’单引号 \”双引号 \右斜杆 (字符串中部分特殊字符必须加上右划线\)<br>汉字常使用特殊字符写，如： \u4f60 –&gt;”你” \u597d –&gt;”好” (可避免乱码)</strong></p>
-<h3 id="9-Boolean-类型："><a href="#9-Boolean-类型：" class="headerlink" title="9. Boolean 类型："></a>9. Boolean 类型：</h3><p>仅有两个值：true和false，实际运算中true=1,false=0<br>也可以看作on/off、yes/no、1/0对应true/false；主要用于JavaScript的控制语句</p>
-<h3 id="10-null-undefine-类型："><a href="#10-null-undefine-类型：" class="headerlink" title="10.null, undefine 类型："></a>10.null, undefine 类型：</h3><p>null 在程序中代表变量没有值；或者不是一个对象<br>undefined 代表变量的值尚未指定；或者对象属性根本不存在<br>有趣的比较：<br>null 与空字符串: 不相等, null 代表什么也没有，空字符串则代表一个为空的字符串<br>null 与 false : 不相等, 但是 !null 等于 true<br>null 与 0 : 不相等，(但是在C++等其它语言中是相等的)<br>null 与 undefined : 相等，但是 null 与 undefined 并不相同</p>
-<h3 id="11-数据类型转换："><a href="#11-数据类型转换：" class="headerlink" title="11.数据类型转换："></a>11.数据类型转换：</h3><p>JavaScript属于<strong>松散类型</strong>的程序语言<br>变量在声明的时候并不需要指定数据类型；变量只有在赋值的时候才会确定数据类型<br>表达式中包含不同类型数据则在计算过程中会强制进行类别转换(优先级：布尔–&gt;数字–&gt;字符)<br>数字 + 字符串：数字转换为字符串<br>数字 + 布尔值：true转换为1，false转换为0<br>字符串 + 布尔值：布尔值转换为字符串true或false<br>函数 parseInt: 强制转换成整数(如果包含字符串，则转换到字符串为止，后面不再理) //如 parseInt(“13a2”)=13<br>函数 parseFloat: 强制转换成浮点数<br>函数 eval: 将字符串强制转换为表达式并返回结果，亦可将字节或变量转成数值。<br>函数 typeof: 查询数据当前类型(string / number / boolean / object ) ，未定义则返回“undefined”</p>
-<h3 id="12-运算符：-同java"><a href="#12-运算符：-同java" class="headerlink" title="12.运算符：(同java)"></a>12.运算符：(同java)</h3><p>算术运算符: 加/字符连接(+)、 减/负号(-)、 乘(*) 、除(/)、 余数(% )； 递增(++)、 递减(–)<br>逻辑运算符: 等于( == )、 不等于( != ) 、 大于( &gt; ) 、 小于( &lt; ) ； 大于等于(&gt;=) 、小于等于(&lt;=)<br>与(&amp;&amp;) 、或(||) 、非(!) ； 恒等(===)、不恒等(!==)<br>位运算符: 左移(&lt;&lt;) 、有符号右移(&gt;&gt;)；无符号右移(&gt;&gt;&gt;)<br>位与(&amp;) 、位或(|)、异或(^) 、NOT (~)<br>赋值运算符: 赋值(=) 、复合赋值(+= -= *= /= %= &amp;= )<br>(先运行完右边的，再跟左边的进行赋值运算；如 var i=10;i-=5-3;结果8)</p>
-<h3 id="13-选择控制语句-同java"><a href="#13-选择控制语句-同java" class="headerlink" title="13.选择控制语句(同java)"></a>13.选择控制语句(同java)</h3><p>if(…){…} else{…} if 语句允许不使用else子句；允许进行嵌套<br>switch(表达式){case 值1:语句1;break; case 值2:语句2;break; default:语句3;}</p>
-<h3 id="14-循环控制语句-类似java"><a href="#14-循环控制语句-类似java" class="headerlink" title="14.循环控制语句(类似java)"></a>14.循环控制语句(类似java)</h3><p>for (初始化;条件;增量){ 语句1; … }<br>for-each遍历: for(var key in objs){var element=objs[key];…} // 注意: in 前面的是 key,而不是下标或者集合里面的元素,获取集合里的元素要使用 集合[key]<br>while (条件){ 语句1; … }<br>do{语句1; …}while(条件);<br>break, continue 跳出循环；还可配合标签使用</p>
-<h3 id="15-对象："><a href="#15-对象：" class="headerlink" title="15.对象："></a>15.对象：</h3><p><strong>JavaScript是一种基于对象语言，对象是JavaScript中最重要的元素</strong><br>对象由属性和方法封装而成<br>javaScript包含四种对象:<br>内置对象 Date<br>自定义对象 Cart<br>浏览器对象 window<br>ActiveX对象 ActionXObject</p>
-<h3 id="16-异常处理："><a href="#16-异常处理：" class="headerlink" title="16. 异常处理："></a>16. 异常处理：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123; ... &#125; <span class="keyword">catch</span>( e ) &#123; ... &#125; <span class="keyword">finally</span> &#123; ... &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Err0"</span>); &#125; <span class="keyword">catch</span>( e ) &#123; alert(e.description); &#125; <span class="keyword">finally</span> &#123; ... &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; <span class="keyword">throw</span> <span class="string">"Err1"</span>; &#125; <span class="keyword">catch</span>( e ) &#123; <span class="keyword">if</span>(e == <span class="string">"Err1"</span>) alert(<span class="string">"错误！"</span>); &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; ... &#125; <span class="keyword">catch</span>( e ) &#123; alert(e.message || e.description); &#125; <span class="comment">// 查看出错提示</span></span><br></pre></td></tr></table></figure>
-<h3 id="17-选取页面的对象"><a href="#17-选取页面的对象" class="headerlink" title="17.选取页面的对象:"></a>17.选取页面的对象:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.forms[<span class="string">"FormName"</span>].elements[<span class="string">"elementName"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.forms[x].elements[y]; <span class="comment">//x和y 是int类型，表示第几个表单，第几个元素</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.FormName.elementName;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.all[<span class="string">"elementName"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.all[<span class="string">"elementID"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">"elementID"</span>);</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementsByName(<span class="string">"elementName"</span>); <span class="comment">//返回数组</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"TagName"</span>); <span class="comment">//返回数组</span></span><br></pre></td></tr></table></figure>
-<h3 id="18-typeof-查看类型"><a href="#18-typeof-查看类型" class="headerlink" title="18. typeof 查看类型:"></a>18. typeof 查看类型:</h3><p>undefined, null, boolean, number, string, object, function<br>也就是 typeof 返回的值只能是上面的其中一个(字符串类型)。<br>注意:以上单词都是小写，不要与内置对象 Number, String, Object, Function 等混淆。<br>null: typeof(null) 返回 “object”, 但null并非object, 具有 null 值的变量也并非object。未定义的返回”undefined”<br><code>number: typeof(NaN)</code> 和 <code>typeof(Infinity)</code> 都返回 number; NaN参与任何数值的计算结果都是NaN,且 NaN != NaN, Infinity / Infinity = NaN</p>
-<h3 id="19-instanceof-判断类型"><a href="#19-instanceof-判断类型" class="headerlink" title="19.instanceof 判断类型:"></a>19.instanceof 判断类型:</h3><p>instanceof 返回一个 boolean 值, 指出对象是否是特定类的一个实例, 实际上就是检测实例是否有继承某类的原型链。<br>对于 Array, null 等特殊对象 typeof 一律返回 object，这正是 typeof 的局限性。<br>instanceof 用于判断一个变量是否某个对象的实例,或者子类,如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</span><br></pre></td></tr></table></figure>
-<p>会返回 true, 而 <code>alert(a instanceof Object)</code>也会返回 true<br>再如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> test();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> test)</span><br></pre></td></tr></table></figure>
-<p>返回 <strong>true, alert(test instanceof Function)</strong>返回 true<br>注意: function 的 arguments, 使用(arguments instanceof Array)返回 false,尽管看起来很像。<br>另外: (window instanceof Object)返回 false, 这里的 instanceof 测试的 Object 是指js中的对象,不是dom模型对象。而 typeof(window) 会得 “object”</p>
-<h3 id="20-in-用法"><a href="#20-in-用法" class="headerlink" title="20.in 用法:"></a>20.in 用法:</h3><p>通常使用在 for 循环中,作 foreach 用,像 for(var i in obj)…<br>也可以用在类中,判断类里面是否有此 key。但注意不能有效用在数组中。<br>如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ar = &#123;<span class="attr">a</span>:<span class="literal">false</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line">alert(<span class="string">'a'</span> <span class="keyword">in</span> ar)</span><br></pre></td></tr></table></figure>
-<p>返回 true;因为 ar[‘a’] 存在。<br>在数组中使用时,如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">alert(<span class="number">2</span> <span class="keyword">in</span> arr)</span><br></pre></td></tr></table></figure>
-<p>会返回 true,因为 arr[2] 存在。而 alert(5 in arr)会返回 false,arr[5] 不存在。<br><code>if (key in obj)</code> <strong>相当于</strong> <code>if(!!obj[key])</code>。<br>数组中也可以使用 for in,如: var array = [‘a’, ‘b’, ‘c’, ‘d’];for(var item in array){alert(array[item]);}<br>值得注意的是,如果对类进行 .prototype.函数 来扩展, for in 时会受到影响,把扩展的内容也循环出来。<br>所以不赞成对 Object 类进行扩展,也不赞成数组使用 for in(因为数组有可能被扩展了)</p>
-<h3 id="21-闭包-closure"><a href="#21-闭包-closure" class="headerlink" title="21.闭包(closure)"></a>21.闭包(closure)</h3><p>是一个拥有许多变量和绑定了这些变量的环境的表达式(通常是一个函数)，因而这些变量也是该表达式的一部分。<br><strong>1) 变量的作用域</strong><br>函数内部可以直接读取全局变量。(函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！)<br>在函数外部无法读取函数内的局部变量。<br>链式作用域(chain scope):子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。<br><strong>2) 闭包就是能够读取其他函数内部变量的函数。</strong><br>由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。<br>所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。<br><strong>3) 闭包的最大用处有两个</strong>，一个是可以读取函数内部的变量，另一个就是避免外部修改这些变量的值。<br><strong>4) 注意:</strong><br>闭包使得函数中的变量都被保存在内存中，内存消耗很大，不能滥用，否则影响性能，可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象(object)使用，把闭包当作它的公用方法(Public Method)，把内部变量当作它的私有属性(private value)，这时一定要小心，不要随便改变父函数内部变量的值。</p>
-<h3 id="22-比较运算"><a href="#22-比较运算" class="headerlink" title="22.比较运算"></a>22.比较运算</h3><p><strong>1)“==” 与 “===” 的区别</strong><br>“==” 双等号, 用于比较时会忽略类型, 字符串可以与数字相等, null 与 undefined 相等<br>“===” 三等号, 用于比较时严格区分类型,类型不相同的不会认为相等<br>同理还有不等于( “!=” 与 “!==” ),比较规则与上面的一样</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">alert( <span class="string">'22'</span> == <span class="number">22</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="string">'22'</span> === <span class="number">22</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="literal">null</span> == <span class="literal">undefined</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="literal">null</span> === <span class="literal">undefined</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="number">0</span> == <span class="literal">null</span> ); <span class="comment">// false, 注: null, undefined 这两者与其它的比较都为false</span></span><br><span class="line">alert( <span class="number">1</span> == <span class="literal">true</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="number">1</span> === <span class="literal">true</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="number">0</span> == <span class="string">''</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="number">0</span> === <span class="string">''</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="string">' \t\r\n '</span> == <span class="number">0</span> ); <span class="comment">// true, 注: 空格、跳格、换行, 都会转成 0 来处理</span></span><br><span class="line">alert( [<span class="number">10</span>] == <span class="number">10</span> ); <span class="comment">// true,注: 对象与基本类型比较时，会先把对象转成基本类型。</span></span><br><span class="line">alert( [<span class="number">10</span>] == <span class="string">'10'</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="regexp">/\d/</span> &gt; <span class="number">0</span> || <span class="regexp">/\d/</span> &lt;= <span class="number">0</span> ); <span class="comment">// false, 无法转换正则为数字</span></span><br><span class="line">alert( &#123;&#125; &gt; <span class="number">0</span> || &#123;&#125; &lt;= <span class="number">0</span> ); <span class="comment">// false, 无法转换Object为数字</span></span><br><span class="line">alert( <span class="literal">NaN</span> == <span class="literal">NaN</span> ); <span class="comment">// false, NaN 与所有值都不相等，包括它自己。</span></span><br><span class="line">alert( <span class="literal">NaN</span> &gt; <span class="number">0</span> || <span class="literal">NaN</span> &lt;= <span class="number">0</span> ); <span class="comment">// false, NaN的比较都为false</span></span><br><span class="line">alert( <span class="literal">NaN</span> &gt; <span class="literal">NaN</span> || <span class="literal">NaN</span> &lt;= <span class="literal">NaN</span> ); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p><strong>2) 比较法则</strong>(仅忽略类型的比较,不是严格比较,比较运算符有: &gt;, &gt;=, &lt;, &lt;=, ==, !=):<br>对于基本类型 Boolean, Number, String 三者之间做比较时，总是向 Number进行类型转换，然后再比较(String 类型的如果没法转成数字,则转成 NaN)；<br>如果有Object，那么将Object转化成这三者，再进行比较(可以转成数字的，优先转成数字,像Date就转成数字)；<br>对于 null 和 undefined, 只有两个都是它们时才相同，其他都为false。<br>比较对象、数组和函数时，进行引用比较，只有引用的是相同地址才认为相同，否则即使拥有相同的属性和函数都认为不相同。<br>如果不能转成数值，或者是NaN，则比较结果为false</p>
+          <h1>JavaScript基础</h1>
+<h2>一、 JS的简介</h2>
+<h4>JavaScript是一种网页编程技术，经常用于创建动态交互网页 JavaScript是一种基于对象和事件驱动的解释性脚本语言，类似C语言和Java的语法 事先不编译；逐行执行；无需进行严格的变量声明；内置大量现成对象，编写少量程序可以完成目标 不同的浏览器甚至同一浏览器的不同版本对JavaScript的支持程度都不一样</h4>
+<h2>二、 JS的基本语法</h2>
+<h3>有两种JavaScript写法：</h3>
+<p>a. 直接在 html 中嵌入，程序写法:<br>
+<code>&lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot; charset=&quot;UTF-8&quot;&gt; &lt;!-- ...javaScript程序... // --&gt; &lt;/script&gt;</code><br>
+b. 调用独立JavaScript文件：在html中写 <code>&lt;script type=&quot;text/javascript&quot; src=&quot;test1.js&quot;&gt; &lt;/script&gt;</code><br>
+&lt;script&gt; 不能用空标志。 JS脚本文件中不需要脚本开始和结束声明，直接写 function</p>
+<h3>1. 在HTML中大小写是不敏感的，但标准的JavaScript是区分大小写的</h3>
+<h3>2. 分号表示语句结束。</h3>
+<p>有换行，分号允许不加(建议加上，以免错误和歧义)<br>
+程序忽略缩进：提倡加上空格或TAB增强程序可读性</p>
+<h3>3. 标识符：</h3>
+<p>成份是 不以数字开头的字母、数字 和下划线(_)、美元符($)<br>
+ECMA v3标准保留的JavaScript的关键字：<br>
+break case catch continue default delete do else false finally<br>
+for function if in instanceof new null return switch this<br>
+throw true try typeof var void while with</p>
+<h3>4. 变量的声明：</h3>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x,y;</span><br><span class="line">x=<span class="number">1</span>; y=<span class="string">"hello world!"</span>;</span><br></pre></td></tr></table></figure></p>
+<h3>5. 函数：</h3>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名 (<span class="params">参数</span>)</span>&#123;</span><br><span class="line">    函数体;</span><br><span class="line">    <span class="keyword">return</span> 返回值;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>参数没类型或顺序，且可变长；可以使用变量、常量或表达式作为函数调用的参数声明函数时，参数可不明写，调用时用 arguments[number] 接收。参数是值传递的。函数由关键字 function 定义； 函数名的定义规则与标识符一致，大小写是敏感的返回任意类型(不需写返回类型)； 返回值必须使用return//参数数量是可变的,若要限定参数数量,如下做法: (指定参数数量为0)<code>if ( arguments.length !== 0 ) throw Error.parameterCount();</code>caller: 调用此函数的函数。没有被调用则此变量为 null。arguments: 此函数的参数列表。<br>
+<code>arguments.caller: 调用此函数的参数列表,没有被调用则为 undefined arguments.callee: 此函数本身的一个引用。在匿名函数里会需要用到。</code></p>
+<h3>6. 数据类型：</h3>
+<h4>基本类型: Number：数字、 String：字符串、 Boolean：布尔 特殊类型: Null：空、 Undefined：未定义 组合类型: Array：数组、 Object：对象</h4>
+<h3>7. Number 数值类型：</h3>
+<p>所有数字都采用64位浮点格式存储，相当于Java和C语言中的double格式能表示的最大值是 <strong>±1.7976931348623157 x 10^308</strong>；能表示的最小值是 **±5 x 10^ -324。**10进制的整数的精确表达的范围是 <strong>-9007199254740992 (-2^53) 到 9007199254740992 (2^53</strong>)。16进制数据前面加上0x，八进制前面加0，<br>
+保留多少位小数：</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">111.115555</span>; <span class="keyword">var</span> b = a.toFixed(<span class="number">2</span>);</span><br><span class="line">alert(b + <span class="string">' : '</span> + <span class="keyword">typeof</span> b); <span class="comment">// 111.12 : string</span></span><br></pre></td></tr></table></figure></p>
+<h3>8. String 类型：</h3>
+<p>字符串常量首尾由单引号或双引号括起，没有字符，只有字符串(所有字符都按字符串处理)<br>
+常用转义符**： \n换行 '单引号 &quot;双引号 \右斜杆 (字符串中部分特殊字符必须加上右划线\)<br>
+汉字常使用特殊字符写，如： \u4f60 --&gt;&quot;你&quot; \u597d --&gt;&quot;好&quot; (可避免乱码)**</p>
+<h3>9. Boolean 类型：</h3>
+<p>仅有两个值：true和false，实际运算中true=1,false=0<br>
+也可以看作on/off、yes/no、1/0对应true/false；主要用于JavaScript的控制语句</p>
+<h3>10.null, undefine 类型：</h3>
+<p>null 在程序中代表变量没有值；或者不是一个对象<br>
+undefined 代表变量的值尚未指定；或者对象属性根本不存在<br>
+有趣的比较：<br>
+null 与空字符串: 不相等, null 代表什么也没有，空字符串则代表一个为空的字符串<br>
+null 与 false : 不相等, 但是 !null 等于 true<br>
+null 与 0 : 不相等，(但是在C++等其它语言中是相等的)<br>
+null 与 undefined : 相等，但是 null 与 undefined 并不相同</p>
+<h3>11.数据类型转换：</h3>
+<p>JavaScript属于<strong>松散类型</strong>的程序语言<br>
+变量在声明的时候并不需要指定数据类型；变量只有在赋值的时候才会确定数据类型<br>
+表达式中包含不同类型数据则在计算过程中会强制进行类别转换(优先级：布尔--&gt;数字--&gt;字符)<br>
+数字 + 字符串：数字转换为字符串<br>
+数字 + 布尔值：true转换为1，false转换为0<br>
+字符串 + 布尔值：布尔值转换为字符串true或false<br>
+函数 parseInt: 强制转换成整数(如果包含字符串，则转换到字符串为止，后面不再理) //如 parseInt(&quot;13a2&quot;)=13<br>
+函数 parseFloat: 强制转换成浮点数<br>
+函数 eval: 将字符串强制转换为表达式并返回结果，亦可将字节或变量转成数值。<br>
+函数 typeof: 查询数据当前类型(string / number / boolean / object ) ，未定义则返回“undefined”</p>
+<h3>12.运算符：(同java)</h3>
+<p>算术运算符: 加/字符连接(+)、 减/负号(-)、 乘(*) 、除(/)、 余数(% )； 递增(++)、 递减(--)<br>
+逻辑运算符: 等于( == )、 不等于( != ) 、 大于( &gt; ) 、 小于( &lt; ) ； 大于等于(&gt;=) 、小于等于(&lt;=)<br>
+与(&amp;&amp;) 、或(||) 、非(!) ； 恒等(===)、不恒等(!==)<br>
+位运算符: 左移(&lt;&lt;) 、有符号右移(&gt;&gt;)；无符号右移(&gt;&gt;&gt;)<br>
+位与(&amp;) 、位或(|)、异或(^) 、NOT (~)<br>
+赋值运算符: 赋值(=) 、复合赋值(+= -= *= /= %= &amp;= )<br>
+(先运行完右边的，再跟左边的进行赋值运算；如 var i=10;i-=5-3;结果8)</p>
+<h3>13.选择控制语句(同java)</h3>
+<p>if(...){...} else{...} if 语句允许不使用else子句；允许进行嵌套<br>
+switch(表达式){case 值1:语句1;break; case 值2:语句2;break; default:语句3;}</p>
+<h3>14.循环控制语句(类似java)</h3>
+<p>for (初始化;条件;增量){ 语句1; ... }<br>
+for-each遍历: for(var key in objs){var element=objs[key];...} // 注意: in 前面的是 key,而不是下标或者集合里面的元素,获取集合里的元素要使用 集合[key]<br>
+while (条件){ 语句1; ... }<br>
+do{语句1; ...}while(条件);<br>
+break, continue 跳出循环；还可配合标签使用</p>
+<h3>15.对象：</h3>
+<p><strong>JavaScript是一种基于对象语言，对象是JavaScript中最重要的元素</strong><br>
+对象由属性和方法封装而成<br>
+javaScript包含四种对象:<br>
+内置对象 Date<br>
+自定义对象 Cart<br>
+浏览器对象 window<br>
+ActiveX对象 ActionXObject</p>
+<h3>16. 异常处理：</h3>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123; ... &#125; <span class="keyword">catch</span>( e ) &#123; ... &#125; <span class="keyword">finally</span> &#123; ... &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Err0"</span>); &#125; <span class="keyword">catch</span>( e ) &#123; alert(e.description); &#125; <span class="keyword">finally</span> &#123; ... &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; <span class="keyword">throw</span> <span class="string">"Err1"</span>; &#125; <span class="keyword">catch</span>( e ) &#123; <span class="keyword">if</span>(e == <span class="string">"Err1"</span>) alert(<span class="string">"错误！"</span>); &#125;</span><br><span class="line"><span class="keyword">try</span>&#123; ... &#125; <span class="keyword">catch</span>( e ) &#123; alert(e.message || e.description); &#125; <span class="comment">// 查看出错提示</span></span><br></pre></td></tr></table></figure></p>
+<h3>17.选取页面的对象:</h3>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.forms[<span class="string">"FormName"</span>].elements[<span class="string">"elementName"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.forms[x].elements[y]; <span class="comment">//x和y 是int类型，表示第几个表单，第几个元素</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.FormName.elementName;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.all[<span class="string">"elementName"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.all[<span class="string">"elementID"</span>];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(<span class="string">"elementID"</span>);</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementsByName(<span class="string">"elementName"</span>); <span class="comment">//返回数组</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"TagName"</span>); <span class="comment">//返回数组</span></span><br></pre></td></tr></table></figure></p>
+<h3>18. typeof 查看类型:</h3>
+<p>undefined, null, boolean, number, string, object, function<br>
+也就是 typeof 返回的值只能是上面的其中一个(字符串类型)。<br>
+注意:以上单词都是小写，不要与内置对象 Number, String, Object, Function 等混淆。<br>
+null: typeof(null) 返回 &quot;object&quot;, 但null并非object, 具有 null 值的变量也并非object。未定义的返回&quot;undefined&quot;<br>
+<code>number: typeof(NaN)</code> 和 <code>typeof(Infinity)</code> 都返回 number; NaN参与任何数值的计算结果都是NaN,且 NaN != NaN, Infinity / Infinity = NaN</p>
+<h3>19.instanceof 判断类型:</h3>
+<p>instanceof 返回一个 boolean 值, 指出对象是否是特定类的一个实例, 实际上就是检测实例是否有继承某类的原型链。<br>
+对于 Array, null 等特殊对象 typeof 一律返回 object，这正是 typeof 的局限性。<br>
+instanceof 用于判断一个变量是否某个对象的实例,或者子类,如:</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> <span class="built_in">Array</span>);</span><br></pre></td></tr></table></figure></p>
+<p>会返回 true, 而 <code>alert(a instanceof Object)</code>也会返回 true<br>
+再如:</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> test();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> test)</span><br></pre></td></tr></table></figure></p>
+<p>返回 **true, alert(test instanceof Function)**返回 true<br>
+注意: function 的 arguments, 使用(arguments instanceof Array)返回 false,尽管看起来很像。<br>
+另外: (window instanceof Object)返回 false, 这里的 instanceof 测试的 Object 是指js中的对象,不是dom模型对象。而 typeof(window) 会得 &quot;object&quot;</p>
+<h3>20.in 用法:</h3>
+<p>通常使用在 for 循环中,作 foreach 用,像 for(var i in obj)...<br>
+也可以用在类中,判断类里面是否有此 key。但注意不能有效用在数组中。<br>
+如:</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ar = &#123;<span class="attr">a</span>:<span class="literal">false</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line">alert(<span class="string">'a'</span> <span class="keyword">in</span> ar)</span><br></pre></td></tr></table></figure></p>
+<p>返回 true;因为 ar['a'] 存在。<br>
+在数组中使用时,如:</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">alert(<span class="number">2</span> <span class="keyword">in</span> arr)</span><br></pre></td></tr></table></figure></p>
+<p>会返回 true,因为 arr[2] 存在。而 alert(5 in arr)会返回 false,arr[5] 不存在。<br>
+<code>if (key in obj)</code> <strong>相当于</strong> <code>if(!!obj[key])</code>。<br>
+数组中也可以使用 for in,如: var array = ['a', 'b', 'c', 'd'];for(var item in array){alert(array[item]);}<br>
+值得注意的是,如果对类进行 .prototype.函数 来扩展, for in 时会受到影响,把扩展的内容也循环出来。<br>
+所以不赞成对 Object 类进行扩展,也不赞成数组使用 for in(因为数组有可能被扩展了)</p>
+<h3>21.闭包(closure)</h3>
+<p>是一个拥有许多变量和绑定了这些变量的环境的表达式(通常是一个函数)，因而这些变量也是该表达式的一部分。<br>
+<strong>1) 变量的作用域</strong><br>
+函数内部可以直接读取全局变量。(函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！)<br>
+在函数外部无法读取函数内的局部变量。<br>
+链式作用域(chain scope):子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。<br>
+<strong>2) 闭包就是能够读取其他函数内部变量的函数。</strong><br>
+由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成&quot;定义在一个函数内部的函数&quot;。<br>
+所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。<br>
+<strong>3) 闭包的最大用处有两个</strong>，一个是可以读取函数内部的变量，另一个就是避免外部修改这些变量的值。<br>
+<strong>4) 注意:</strong><br>
+闭包使得函数中的变量都被保存在内存中，内存消耗很大，不能滥用，否则影响性能，可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>
+闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象(object)使用，把闭包当作它的公用方法(Public Method)，把内部变量当作它的私有属性(private value)，这时一定要小心，不要随便改变父函数内部变量的值。</p>
+<h3>22.比较运算</h3>
+<p><strong>1)“==” 与 “===” 的区别</strong><br>
+“==” 双等号, 用于比较时会忽略类型, 字符串可以与数字相等, null 与 undefined 相等<br>
+“===” 三等号, 用于比较时严格区分类型,类型不相同的不会认为相等<br>
+同理还有不等于( “!=” 与 “!==” ),比较规则与上面的一样</p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">alert( <span class="string">'22'</span> == <span class="number">22</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="string">'22'</span> === <span class="number">22</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="literal">null</span> == <span class="literal">undefined</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="literal">null</span> === <span class="literal">undefined</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="number">0</span> == <span class="literal">null</span> ); <span class="comment">// false, 注: null, undefined 这两者与其它的比较都为false</span></span><br><span class="line">alert( <span class="number">1</span> == <span class="literal">true</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="number">1</span> === <span class="literal">true</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="number">0</span> == <span class="string">''</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="number">0</span> === <span class="string">''</span> ); <span class="comment">// false</span></span><br><span class="line">alert( <span class="string">' \t\r\n '</span> == <span class="number">0</span> ); <span class="comment">// true, 注: 空格、跳格、换行, 都会转成 0 来处理</span></span><br><span class="line">alert( [<span class="number">10</span>] == <span class="number">10</span> ); <span class="comment">// true,注: 对象与基本类型比较时，会先把对象转成基本类型。</span></span><br><span class="line">alert( [<span class="number">10</span>] == <span class="string">'10'</span> ); <span class="comment">// true</span></span><br><span class="line">alert( <span class="regexp">/\d/</span> &gt; <span class="number">0</span> || <span class="regexp">/\d/</span> &lt;= <span class="number">0</span> ); <span class="comment">// false, 无法转换正则为数字</span></span><br><span class="line">alert( &#123;&#125; &gt; <span class="number">0</span> || &#123;&#125; &lt;= <span class="number">0</span> ); <span class="comment">// false, 无法转换Object为数字</span></span><br><span class="line">alert( <span class="literal">NaN</span> == <span class="literal">NaN</span> ); <span class="comment">// false, NaN 与所有值都不相等，包括它自己。</span></span><br><span class="line">alert( <span class="literal">NaN</span> &gt; <span class="number">0</span> || <span class="literal">NaN</span> &lt;= <span class="number">0</span> ); <span class="comment">// false, NaN的比较都为false</span></span><br><span class="line">alert( <span class="literal">NaN</span> &gt; <span class="literal">NaN</span> || <span class="literal">NaN</span> &lt;= <span class="literal">NaN</span> ); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>2) 比较法则</strong>(仅忽略类型的比较,不是严格比较,比较运算符有: &gt;, &gt;=, &lt;, &lt;=, ==, !=):<br>
+对于基本类型 Boolean, Number, String 三者之间做比较时，总是向 Number进行类型转换，然后再比较(String 类型的如果没法转成数字,则转成 NaN)；<br>
+如果有Object，那么将Object转化成这三者，再进行比较(可以转成数字的，优先转成数字,像Date就转成数字)；<br>
+对于 null 和 undefined, 只有两个都是它们时才相同，其他都为false。<br>
+比较对象、数组和函数时，进行引用比较，只有引用的是相同地址才认为相同，否则即使拥有相同的属性和函数都认为不相同。<br>
+如果不能转成数值，或者是NaN，则比较结果为false</p>
 
         </div>
       </article>
@@ -274,7 +377,7 @@ arguments.callee: 此函数本身的一个引用。在匿名函数里会需要�
 <!-- Footer -->
 <footer class="site-info">
   <p>
-    <span>Meows &copy; 2019</span>
+    <span>Meows &copy; 2021</span>
     
       <span class="split">|</span>
       <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
