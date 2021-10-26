@@ -143,18 +143,35 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content has_line_number">
-          <h1 id="65-Valid-Number"><a href="#65-Valid-Number" class="headerlink" title="65. Valid Number"></a>65. Valid Number</h1><p>Validate if a given string can be interpreted as a decimal number.</p>
-<p>Some examples:<br><code>&quot;0&quot;</code> =&gt; <code>true</code><br><code>&quot; 0.1 &quot;</code> =&gt; <code>true</code><br><code>&quot;abc&quot;</code> =&gt; <code>false</code><br><code>&quot;1 a&quot;</code> =&gt; <code>false</code><br><code>&quot;2e10&quot;</code> =&gt; <code>true</code><br><code>&quot; -90e3   &quot;</code> =&gt; <code>true</code><br><code>&quot; 1e&quot;</code> =&gt; <code>false</code><br><code>&quot;e3&quot;</code> =&gt; <code>false</code><br><code>&quot; 6e-1&quot;</code> =&gt; <code>true</code><br><code>&quot; 99e2.5 &quot;</code> =&gt; <code>false</code><br><code>&quot;53.5e93&quot;</code> =&gt; <code>true</code><br><code>&quot; --6 &quot;</code> =&gt; <code>false</code><br><code>&quot;-+3&quot;</code> =&gt; <code>false</code><br><code>&quot;95a54e53&quot;</code> =&gt; <code>false</code></p>
+          <h1>65. Valid Number</h1>
+<p>Validate if a given string can be interpreted as a decimal number.</p>
+<p>Some examples:<br>
+<code>&quot;0&quot;</code> =&gt; <code>true</code><br>
+<code>&quot; 0.1 &quot;</code> =&gt; <code>true</code><br>
+<code>&quot;abc&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;1 a&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;2e10&quot;</code> =&gt; <code>true</code><br>
+<code>&quot; -90e3 &quot;</code> =&gt; <code>true</code><br>
+<code>&quot; 1e&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;e3&quot;</code> =&gt; <code>false</code><br>
+<code>&quot; 6e-1&quot;</code> =&gt; <code>true</code><br>
+<code>&quot; 99e2.5 &quot;</code> =&gt; <code>false</code><br>
+<code>&quot;53.5e93&quot;</code> =&gt; <code>true</code><br>
+<code>&quot; --6 &quot;</code> =&gt; <code>false</code><br>
+<code>&quot;-+3&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;95a54e53&quot;</code> =&gt; <code>false</code></p>
 <p><strong>Note:</strong> It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:</p>
 <ul>
 <li>Numbers 0-9</li>
-<li>Exponent - “e”</li>
-<li>Positive/negative sign - “+”/“-“</li>
-<li>Decimal point - “.”</li>
+<li>Exponent - &quot;e&quot;</li>
+<li>Positive/negative sign - &quot;+&quot;/&quot;-&quot;</li>
+<li>Decimal point - &quot;.&quot;</li>
 </ul>
 <p>Of course, the context of these characters also matters in the input.</p>
-<p><strong>Update (2015-02-10):</strong><br>The signature of the <code>C++</code> function had been updated. If you still see your function signature accepts a <code>const char *</code>argument, please click the reload button to reset your code definition.</p>
-<h2 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isNumber</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ss = s.strip()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            float(ss)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p><strong>Update (2015-02-10):</strong><br>
+The signature of the <code>C++</code> function had been updated. If you still see your function signature accepts a <code>const char *</code>argument, please click the reload button to reset your code definition.</p>
+<h2>Code：</h2>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isNumber</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ss = s.strip()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            float(ss)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
 
         </div>
       </article>
